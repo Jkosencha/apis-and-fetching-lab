@@ -19,18 +19,27 @@ function displayAlerts(data, state) {
   const alerts = data.features;
 
   const summary = document.createElement("h3");
-  summary.textContent =
-    `Current watches, warnings, and advisories for ${state}: ${alerts.length}`;
+summary.textContent = `Weather Alerts: ${alerts.length}`;
+
+//   const summary = document.createElement("h3");
+//   summary.textContent =
+//     `Current watches, warnings, and advisories for ${state}: ${alerts.length}`;
 
   alertsDisplay.appendChild(summary);
 
   const list = document.createElement("ul");
 
-  alerts.forEach(alert => {
-    const li = document.createElement("li");
-    li.textContent = alert.properties.headline;
-    list.appendChild(li);
-  });
+//   alerts.forEach(alert => {
+//     const li = document.createElement("li");
+//     li.textContent = alert.properties.headline;
+//     list.appendChild(li);
+//   });
+
+alerts.forEach(alert => {
+  const p = document.createElement("p");
+  p.textContent = alert.properties.headline;
+  alertsDisplay.appendChild(p);
+});
 
   alertsDisplay.appendChild(list);
 }
